@@ -13,6 +13,8 @@ Include the neural network model diagram.
 ## DESIGN STEPS
 
 ### STEP 1:
+Import tensorflow and preprocessing libraries
+
 
 ### STEP 2:
 
