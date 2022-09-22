@@ -23,7 +23,16 @@ Import tensorflow and preprocessing libraries
 Write your own steps
 
 ## PROGRAM
-
+import numpy as np
+from tensorflow import keras
+from tensorflow.keras import layers
+from tensorflow.keras.datasets import mnist
+import tensorflow as tf
+import matplotlib.pyplot as plt
+from tensorflow.keras import utils
+import pandas as pd
+from sklearn.metrics import classification_report,confusion_matrix
+from tensorflow.keras.preprocessing import image
 
 ## OUTPUT
 
