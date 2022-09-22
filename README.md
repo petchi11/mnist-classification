@@ -35,18 +35,6 @@ import pandas as pd
 from sklearn.metrics import classification_report,confusion_matrix
 from tensorflow.keras.preprocessing import image
 
-(X_train, y_train), (X_test, y_test) = mnist.load_data()
-
-X_train.shape
-
-X_test.shape
-
-single_image= X_train[100]
-
-single_image.shape
-
-plt.imshow(single_image,cmap='gray')
-
 
 
 ## OUTPUT
