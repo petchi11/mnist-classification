@@ -17,10 +17,10 @@ Import tensorflow and preprocessing libraries
 
 
 ### STEP 2:
+Build a Convolutional Neural Network Model
 
 ### STEP 3:
-
-Write your own steps
+Create Model and then predict
 
 ## PROGRAM
 ```python
@@ -282,3 +282,4 @@ weighted avg       0.98      0.98      0.98     10000
 
 
 ## RESULT
+Thus a convolutional neural network for digit classification and to verify the response for scanned handwritten images is written and executed successfully
