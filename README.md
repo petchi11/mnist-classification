@@ -47,6 +47,7 @@ loss	accuracy	val_loss	val_accuracy
 4	0.035640	0.989117	0.057407	0.9824
 ```
 ![download](https://user-images.githubusercontent.com/105230321/192107530-2569a448-96d4-4224-bf7b-00f8ac3d1665.png)
+
 ![download](https://user-images.githubusercontent.com/105230321/192107538-062f3542-94df-410a-a28d-77dd35621598.png)
 
 ### Classification Report
