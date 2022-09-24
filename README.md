@@ -42,11 +42,35 @@ Include your plot here
 
 ### Classification Report
 
-Include Classification Report here
+              precision    recall  f1-score   support
+
+           0       0.99      0.98      0.99       980
+           1       0.99      1.00      0.99      1135
+           2       0.96      0.99      0.98      1032
+           3       0.99      0.98      0.99      1010
+           4       0.98      0.99      0.99       982
+           5       0.98      0.98      0.98       892
+           6       1.00      0.97      0.99       958
+           7       0.97      0.99      0.98      1028
+           8       0.97      0.98      0.97       974
+           9       0.99      0.96      0.98      1009
+
+    accuracy                           0.98     10000
+   macro avg       0.98      0.98      0.98     10000
+weighted avg       0.98      0.98      0.98     10000
 
 ### Confusion Matrix
 
-Include confusion matrix here
+[[ 963    0    6    0    0    4    0    1    4    2]
+ [   0 1131    3    0    0    0    1    0    0    0]
+ [   0    2 1026    0    1    0    0    3    0    0]
+ [   0    0    5  990    0    5    0    6    4    0]
+ [   0    1    5    0  970    0    0    0    2    4]
+ [   1    0    2    6    0  874    1    0    7    1]
+ [   7    3    2    0    4    2  932    1    7    0]
+ [   0    2   12    0    0    0    0 1013    1    0]
+ [   3    0    8    1    0    0    0    4  954    4]
+ [   1    5    0    1   10    3    0   12    6  971]]
 
 ### New Sample Data Prediction
 
