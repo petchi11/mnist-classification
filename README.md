@@ -41,7 +41,7 @@ import pandas as pd
 Include your plot here
 
 ### Classification Report
-
+```
               precision    recall  f1-score   support
 
            0       0.99      0.98      0.99       980
@@ -58,7 +58,7 @@ Include your plot here
     accuracy                           0.98     10000
    macro avg       0.98      0.98      0.98     10000
 weighted avg       0.98      0.98      0.98     10000
-
+```
 ### Confusion Matrix
 ```
 [[ 963    0    6    0    0    4    0    1    4    2]
