@@ -38,8 +38,17 @@ import pandas as pd
 
 ### Training Loss, Validation Loss Vs Iteration Plot
 
-Include your plot here
+```
+loss	accuracy	val_loss	val_accuracy
+0	0.239503	0.929367	0.110500	0.9658
+1	0.082185	0.975467	0.066355	0.9772
+2	0.057572	0.982383	0.057882	0.9816
+3	0.044465	0.986250	0.050559	0.9836
+4	0.035640	0.989117	0.057407	0.9824
 
+![download](https://user-images.githubusercontent.com/105230321/192107530-2569a448-96d4-4224-bf7b-00f8ac3d1665.png)
+![download](https://user-images.githubusercontent.com/105230321/192107538-062f3542-94df-410a-a28d-77dd35621598.png)
+```
 ### Classification Report
 ```
               precision    recall  f1-score   support
