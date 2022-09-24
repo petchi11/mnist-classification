@@ -277,9 +277,7 @@ weighted avg       0.98      0.98      0.98     10000
  ```
 
 ### New Sample Data Prediction
-
-!![image](https://user-images.githubusercontent.com/105230321/192108782-c6b6c2bd-ce3e-476e-ba5b-bd526a8e1299.png)
-
+![output](https://user-images.githubusercontent.com/105230321/192108957-7be62352-cad2-4479-908b-06e8ca7014a4.jpg)
 
 ## RESULT
 Thus a convolutional neural network for digit classification and to verify the response for scanned handwritten images is written and executed successfully
