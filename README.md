@@ -194,14 +194,14 @@ print(classification_report(y_test,x_test_predictions))
    macro avg       0.98      0.98      0.98     10000
 weighted avg       0.98      0.98      0.98     10000
 
-img = image.load_img('two.jpg')
+img = image.load_img('five.jpg')
 
 type(img)
 
 PIL.JpegImagePlugin.JpegImageFile
 
 from tensorflow.keras.preprocessing import image
-img = image.load_img('two.jpg')
+img = image.load_img('five.jpg')
 img_tensor = tf.convert_to_tensor(np.asarray(img))
 img_28 = tf.image.resize(img_tensor,(28,28))
 img_28_gray = tf.image.rgb_to_grayscale(img_28)
@@ -212,7 +212,7 @@ x_single_prediction = np.argmax(
      axis=1)
      
 print(x_single_prediction)
-[2]
+[5]
 
 plt.imshow(img_28_gray_scaled.reshape(28,28),cmap='gray')
 
@@ -224,7 +224,7 @@ x_single_prediction = np.argmax(
      axis=1)
      
 print(x_single_prediction)
-[2]
+[5]
 
 ```
 ## OUTPUT
@@ -278,7 +278,7 @@ weighted avg       0.98      0.98      0.98     10000
 
 ### New Sample Data Prediction
 
-![download](https://user-images.githubusercontent.com/105230321/192107312-eeb33d71-4378-4ae1-ac5d-fde7f5692692.png)
+!![image](https://user-images.githubusercontent.com/105230321/192108782-c6b6c2bd-ce3e-476e-ba5b-bd526a8e1299.png)
 
 
 ## RESULT
