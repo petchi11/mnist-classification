@@ -34,48 +34,68 @@ from tensorflow.keras import utils
 import pandas as pd
 from sklearn.metrics import classification_report,confusion_matrix
 from tensorflow.keras.preprocessing import image
+
 (X_train, y_train), (X_test, y_test) = mnist.load_data()
+
 Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/mnist.npz
 11493376/11490434 [==============================] - 0s 0us/step
 11501568/11490434 [==============================] - 0s 0us/step
+
 X_train.shape
 (60000, 28, 28)
+
 X_test.shape
 (10000, 28, 28)
+
 single_image= X_train[100]
+
 single_image.shape
 (28, 28)
+
 plt.imshow(single_image,cmap='gray')
-<matplotlib.image.AxesImage at 0x7fde58606c10>
+
 
 y_train.shape
 (60000,)
+
 X_train.min()
 0
+
 X_train.max()
 255
+
 X_train_scaled = X_train/255.0
 X_test_scaled = X_test/255.0
+
 X_train_scaled.min()
 0.0
+
 X_train_scaled.max()
 1.0
+
 y_train[0]
 5
+
 y_train_onehot = utils.to_categorical(y_train,10)
 y_test_onehot = utils.to_categorical(y_test,10)
+
 type(y_train_onehot)
 numpy.ndarray
+
 y_train_onehot.shape
 (60000, 10)
+
 single_image = X_train[500]
+
 plt.imshow(single_image,cmap='gray')
-<matplotlib.image.AxesImage at 0x7fde580f3f50>
+
 
 y_train_onehot[500]
 array([0., 0., 0., 1., 0., 0., 0., 0., 0., 0.], dtype=float32)
+
 X_train_scaled = X_train_scaled.reshape(-1,28,28,1)
 X_test_scaled = X_test_scaled.reshape(-1,28,28,1)
+
 model = keras.Sequential()
 model.add(layers.Input(shape=(28,28,1)))
 model.add(layers.Conv2D(filters=32,kernel_size=(3,3),activation='relu'))
@@ -83,6 +103,7 @@ model.add(layers.MaxPool2D(pool_size=(2,2)))
 model.add(layers.Flatten())
 model.add(layers.Dense(32,activation='relu'))
 model.add(layers.Dense(10,activation='softmax'))
+
 model.summary()
 Model: "sequential"
 _________________________________________________________________
@@ -104,10 +125,12 @@ Total params: 173,738
 Trainable params: 173,738
 Non-trainable params: 0
 _________________________________________________________________
+
 # Choose the appropriate parameters
 model.compile(loss='categorical_crossentropy',
               optimizer='adam',
               metrics='accuracy')
+              
 model.fit(X_train_scaled ,y_train_onehot, epochs=5,
           batch_size=64, 
           validation_data=(X_test_scaled,y_test_onehot))
@@ -122,7 +145,9 @@ Epoch 4/5
 Epoch 5/5
 938/938 [==============================] - 24s 25ms/step - loss: 0.0356 - accuracy: 0.9891 - val_loss: 0.0574 - val_accuracy: 0.9824
 <keras.callbacks.History at 0x7fde580dff50>
+
 metrics = pd.DataFrame(model.history.history)
+
 metrics.head()
 loss	accuracy	val_loss	val_accuracy
 0	0.239503	0.929367	0.110500	0.9658
@@ -130,11 +155,12 @@ loss	accuracy	val_loss	val_accuracy
 2	0.057572	0.982383	0.057882	0.9816
 3	0.044465	0.986250	0.050559	0.9836
 4	0.035640	0.989117	0.057407	0.9824
+
 metrics[['accuracy','val_accuracy']].plot()
-<matplotlib.axes._subplots.AxesSubplot at 0x7fde541e13d0>
+
 
 metrics[['loss','val_loss']].plot()
-<matplotlib.axes._subplots.AxesSubplot at 0x7fde529ee150>
+
 
 x_test_predictions = np.argmax(model.predict(X_test_scaled), axis=1)
 print(confusion_matrix(y_test,x_test_predictions))
@@ -148,7 +174,9 @@ print(confusion_matrix(y_test,x_test_predictions))
  [   0    2   12    0    0    0    0 1013    1    0]
  [   3    0    8    1    0    0    0    4  954    4]
  [   1    5    0    1   10    3    0   12    6  971]]
+ 
 print(classification_report(y_test,x_test_predictions))
+
               precision    recall  f1-score   support
 
            0       0.99      0.98      0.99       980
@@ -167,29 +195,37 @@ print(classification_report(y_test,x_test_predictions))
 weighted avg       0.98      0.98      0.98     10000
 
 img = image.load_img('two.jpg')
+
 type(img)
+
 PIL.JpegImagePlugin.JpegImageFile
+
 from tensorflow.keras.preprocessing import image
 img = image.load_img('two.jpg')
 img_tensor = tf.convert_to_tensor(np.asarray(img))
 img_28 = tf.image.resize(img_tensor,(28,28))
 img_28_gray = tf.image.rgb_to_grayscale(img_28)
 img_28_gray_scaled = img_28_gray.numpy()/255.0
+
 x_single_prediction = np.argmax(
     model.predict(img_28_gray_scaled.reshape(1,28,28,1)),
      axis=1)
+     
 print(x_single_prediction)
 [2]
+
 plt.imshow(img_28_gray_scaled.reshape(28,28),cmap='gray')
-<matplotlib.image.AxesImage at 0x7fde53f873d0>
 
 img_28_gray_inverted = 255.0-img_28_gray
 img_28_gray_inverted_scaled = img_28_gray_inverted.numpy()/255.0
+
 x_single_prediction = np.argmax(
     model.predict(img_28_gray_inverted_scaled.reshape(1,28,28,1)),
      axis=1)
+     
 print(x_single_prediction)
 [2]
+
 ```
 ## OUTPUT
 
