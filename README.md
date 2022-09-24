@@ -278,7 +278,7 @@ weighted avg       0.98      0.98      0.98     10000
 
 ### New Sample Data Prediction
 
-!![download](https://user-images.githubusercontent.com/105230321/192107312-eeb33d71-4378-4ae1-ac5d-fde7f5692692.png)
+![download](https://user-images.githubusercontent.com/105230321/192107312-eeb33d71-4378-4ae1-ac5d-fde7f5692692.png)
 
 
 ## RESULT
