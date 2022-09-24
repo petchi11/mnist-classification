@@ -50,6 +50,7 @@ Include confusion matrix here
 
 ### New Sample Data Prediction
 
-Include your sample input and output for your hand written images.
+!![download](https://user-images.githubusercontent.com/105230321/192107312-eeb33d71-4378-4ae1-ac5d-fde7f5692692.png)
+
 
 ## RESULT
